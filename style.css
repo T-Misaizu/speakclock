@@ -6,10 +6,17 @@ body {
     padding: 20px;
 }
 
-#datetime-display {
+#time-display {
+    font-size: 15vw; /* ビューポート幅に応じてサイズを調整 */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#date-display {
     font-size: 5vw; /* ビューポート幅に応じてサイズを調整 */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 #time-s-frequency {
@@ -24,7 +31,7 @@ button, select, input[type="time"], input[type="text"] {
     padding: 10px 20px; /* パディングを調整してボタンを大きくする */
     margin: 10px 0; /* 余白を適切に設定 */
     border-radius: 10px; /* 角丸のデザイン */
-    border: 1px solid #d6336c; /* 枠線をポップなピンク色に */
+    border: 2px solid #d6336c; /* 枠線をポップなピンク色に */
 }
 
 /* 曜日ごとの色はそのまま */
@@ -134,8 +141,8 @@ input:checked + .slider:before {
     position: absolute;
     transform: translateX(-50%);
     top: 10px;
-    right: 0px;
-    font-size: 16px;
+    right: -20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -149,7 +156,7 @@ input:checked + .slider:before {
 
 input:checked + .slider:after {
     content: "ON";
-    font-size: 20px;
+    font-size: 25px;
     left: 20px;
     right: auto;
 }

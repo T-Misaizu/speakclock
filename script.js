@@ -1,4 +1,5 @@
-const datetimeDisplay = document.getElementById('datetime-display');
+const dateDisplay = document.getElementById('date-display');
+const timeDisplay = document.getElementById('time-display');
 const alarmForm = document.getElementById('alarm-form');
 const alarmsList = document.getElementById('alarms-list');
 let alarms = [];
@@ -38,10 +39,11 @@ function updateDateTime() {
     const formattedDate = `${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')}（${['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'][dayOfWeek]}）`;
     const formattedTime = `${hours}:${minutes}:${seconds}`;
 
-    datetimeDisplay.textContent = `${formattedDate} ${formattedTime}`;
+    dateDisplay.textContent = `${formattedDate}`;
+    timeDisplay.textContent = `${formattedTime}`;
 
     // 曜日に応じたスタイルの適用
-    datetimeDisplay.className = dayOfWeek === 6 ? 'saturday' : dayOfWeek === 0 ? 'sunday' : 'weekday';
+    dateDisplay.className = dayOfWeek === 6 ? 'saturday' : dayOfWeek === 0 ? 'sunday' : 'weekday';
 
     // 時報のロジックを更新
     if (now.getMinutes() % timeSignalFrequency === 0 && now.getSeconds() === 0) {
