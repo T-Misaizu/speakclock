@@ -9,8 +9,22 @@ body {
 #datetime-display {
     font-size: 5vw; /* ビューポート幅に応じてサイズを調整 */
     font-weight: bold;
-    color: #d6336c; /* ポップなピンク色 */
     margin-bottom: 20px;
+}
+
+#time-s-frequency {
+    font-size: 4vw; /* ビューポート幅に応じてサイズを調整 */
+    margin-bottom: 20px;
+}
+
+
+/* ボタンとドロップダウンメニューのスタイルを大きくする */
+button, select, input[type="time"], input[type="text"] {
+    font-size: 4vw; /* フォントサイズを大きくする */
+    padding: 10px 20px; /* パディングを調整してボタンを大きくする */
+    margin: 10px 0; /* 余白を適切に設定 */
+    border-radius: 10px; /* 角丸のデザイン */
+    border: 1px solid #d6336c; /* 枠線をポップなピンク色に */
 }
 
 /* 曜日ごとの色はそのまま */
@@ -25,6 +39,16 @@ body {
 .weekday {
     color: black;
 }
+/* フォームのスタイル */
+#alarm-form {
+    text-align: center; /* 中央揃え */
+}
+
+/* フォーム内の要素 */
+#alarm-form input, #alarm-form button {
+    margin-right: 10px; /* 要素間の余白 */
+}
+
 
 #alarm-form, #alarms-list {
     font-size: 4vw;
@@ -46,6 +70,7 @@ body {
 }
 
 #alarms-table th, #alarms-table td {
+    font-size: 3vw; /* 表の文字サイズを大きくする */
     border: 1px solid #d6336c; /* ポップなピンク色の枠線 */
     padding: 10px;
     text-align: center;
@@ -56,11 +81,12 @@ body {
 }
 
 /* トグルスイッチのスタイル */
+/* トグルスイッチのスタイルを大きくする */
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 80px; /* 幅を少し広げる */
-    height: 34px;
+    width: 100px; /* 幅を大きくする */
+    height: 50px; /* 高さを大きくする */
 }
 
 .toggle-switch input {
@@ -78,19 +104,27 @@ body {
     bottom: 0;
     background-color: #ccc;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 50px; /* 角丸の半径を大きくする */
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 42px; /* ボールのサイズを大きくする */
+    width: 42px; /* ボールのサイズを大きくする */
     left: 4px;
     bottom: 4px;
     background-color: white;
     transition: .4s;
     border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(50px); /* スライダーの移動距離を調整 */
 }
 
 .slider:after {
@@ -100,8 +134,8 @@ body {
     position: absolute;
     transform: translateX(-50%);
     top: 10px;
-    right: 10px;
-    font-size: 12px;
+    right: 0px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -115,9 +149,54 @@ input:checked + .slider:before {
 
 input:checked + .slider:after {
     content: "ON";
-    left: 10px;
+    font-size: 20px;
+    left: 20px;
     right: auto;
 }
 
+/* トグルスイッチのスタイルを大きくする */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 100px; /* 幅を大きくする */
+    height: 50px; /* 高さを大きくする */
+}
 
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 50px; /* 角丸の半径を大きくする */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 42px; /* ボールのサイズを大きくする */
+    width: 42px; /* ボールのサイズを大きくする */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(50px); /* スライダーの移動距離を調整 */
+}
 

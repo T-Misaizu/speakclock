@@ -67,6 +67,15 @@ window.speechSynthesis.onvoiceschanged = () => {
     childVoice = availableVoices.find(voice => voice.name.includes('Child') || voice.lang.includes('ja'));
 };
 
+const speakTimeButton = document.getElementById('speak-time-button');
+
+speakTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    speak(`${hours}時${minutes}分です。`);
+});
+
 function speak(message) {
     const speech = new SpeechSynthesisUtterance(message);
     speech.voice = childVoice; // 子どもの声を設定
