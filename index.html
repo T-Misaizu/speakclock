@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日時表示アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="datetime-display"></div>
+     <div>
+        時報の頻度:
+        <select id="time-signal-frequency">
+            <option value="60">毎時</option>
+            <option value="30">30分ごと</option>
+            <option value="1">1分ごと</option>
+        </select>
+    </div>
+    <form id="alarm-form">
+        <input type="time" id="alarm-time">
+        <input type="text" id="alarm-name" placeholder="アラーム名">
+        <button type="submit">アラーム設定</button>
+    </form>
+    <table id="alarms-table">
+        <thead>
+            <tr>
+                <th>名前</th>
+                <th>時刻</th>
+                <th>ON/OFF</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="alarms-list">
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
